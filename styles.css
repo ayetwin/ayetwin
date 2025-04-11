@@ -38,8 +38,10 @@ h1 {
 }
 
 .chatbox {
-    width: 40rem;
-    height: 55rem;
+    width: 50rem; /* Wider */
+    max-width: 90vw; /* Responsive for smaller screens */
+    height: 40rem; /* Shorter */
+    max-height: 80vh; /* Responsive for smaller screens */
     background-color: #2C3E50;
     border-radius: 2rem;
     padding: 2rem;
@@ -48,7 +50,7 @@ h1 {
 }
 
 .messages {
-    height: 45rem;
+    height: 30rem; /* Adjusted for shorter chatbox */
     overflow-y: auto;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
