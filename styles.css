@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #1C2526 0%, #0F1419 100%); /* Gradient background */
+    background: #1C2526; /* Solid dark background */
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -18,8 +18,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.3); /* Semi-transparent header */
-    backdrop-filter: blur(5px); /* Frosted glass effect */
+    background: rgba(0, 0, 0, 0.5); /* Slightly darker header */
+    backdrop-filter: blur(5px);
     position: sticky;
     top: 0;
     z-index: 10;
@@ -40,29 +40,21 @@ header {
     font-size: 1rem;
     cursor: pointer;
     border: none;
-    border-radius: 1.5rem;
-    background: linear-gradient(45deg, #34495E, #2C3E50); /* Default gradient */
+    border-radius: 2rem; /* More rounded, like the reference */
+    background: #34495E; /* Default color */
     color: white;
     transition: all 0.3s ease;
 }
 
 .mode-toggle button:hover {
-    transform: scale(1.05) translateY(-2px);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .container {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 1rem; /* Reduced margin since no title */
     margin-bottom: 2rem;
-}
-
-h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    transition: color 0.3s ease;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .chatbox {
@@ -70,14 +62,11 @@ h1 {
     max-width: 80vw;
     height: 30rem;
     max-height: 60vh;
-    background: rgba(44, 62, 80, 0.9); /* Semi-transparent background */
+    background: rgba(44, 62, 80, 0.95); /* More opaque for readability */
     border-radius: 2rem;
     padding: 1.5rem;
-    margin-top: 1.5rem;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1), 0 0 40px rgba(255, 255, 255, 0.05); /* Glow effect */
-    border: 1px solid transparent;
-    background-clip: padding-box;
-    border-image: linear-gradient(45deg, #5B5EA6, #2ECC71) 1;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .messages {
@@ -161,7 +150,7 @@ h1 {
 .input-area button {
     padding: 0.8rem 1.5rem;
     border-radius: 1.5rem;
-    background: linear-gradient(45deg, #5B5EA6, #4A5EA6);
+    background: #5B5EA6;
     color: white;
     border: none;
     cursor: pointer;
@@ -170,21 +159,17 @@ h1 {
 
 .input-area button:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 /* Female Mode */
-.female-mode h1 {
-    color: #FFC107;
-}
-
 .female-mode .mode-toggle #female-mode {
-    background: linear-gradient(45deg, #5B5EA6, #4A5EA6);
+    background: #5B5EA6;
     color: white;
 }
 
 .female-mode .mode-toggle #male-mode {
-    background: linear-gradient(45deg, #34495E, #2C3E50);
+    background: #34495E;
     color: white;
 }
 
@@ -207,25 +192,21 @@ h1 {
 }
 
 .female-mode .input-area button {
-    background: linear-gradient(45deg, #5B5EA6, #4A5EA6);
+    background: #5B5EA6;
 }
 
 .female-mode .input-area button:hover {
-    background: linear-gradient(45deg, #7D84B2, #6C74A2);
+    background: #7D84B2;
 }
 
 /* Male Mode */
-.male-mode h1 {
-    color: white;
-}
-
 .male-mode .mode-toggle #male-mode {
-    background: linear-gradient(45deg, #2ECC71, #27AE60);
+    background: #2ECC71;
     color: white;
 }
 
 .male-mode .mode-toggle #female-mode {
-    background: linear-gradient(45deg, #34495E, #2C3E50);
+    background: #34495E;
     color: white;
 }
 
@@ -248,9 +229,9 @@ h1 {
 }
 
 .male-mode .input-area button {
-    background: linear-gradient(45deg, #2ECC71, #27AE60);
+    background: #2ECC71;
 }
 
 .male-mode .input-area button:hover {
-    background: linear-gradient(45deg, #3CB37A, #2E8B57);
+    background: #3CB37A;
 }
