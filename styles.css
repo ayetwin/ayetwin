@@ -88,76 +88,101 @@ body::after {
 
 .mode-toggle {
     display: flex;
-    gap: 0.8rem;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Uiverse.io button style, corrected */
-.button {
-    margin: 0;
-    height: auto;
-    background: transparent;
-    padding: 0;
-    border: none;
-    cursor: pointer;
-    --border-right: 4px;
-    --text-stroke-color: rgba(255, 255, 255, 0.6);
-    --fs-size: 1rem;
-    letter-spacing: 2px;
-    text-decoration: none;
-    font-size: var(--fs-size);
-    font-family: 'Roboto', sans-serif;
+/* Toggle switch styles from Uiverse.io by TCdesign-dev, adapted for our colors */
+.check {
     position: relative;
-    text-transform: uppercase;
-    color: transparent;
-    -webkit-text-stroke: 1px var(--text-stroke-color);
+    background: linear-gradient(90deg, #2ECC71, #27AE60); /* Male Mode gradient (default) */
+    line-height: 0;
+    font-size: 20px; /* Adjusted size for better fit */
 }
 
-/* Hover text for the animation */
-.hover-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
+.check input[type="checkbox"],
+.check label,
+.check label::before,
+.check label::after {
+    appearance: none;
+    display: inline-block;
+    font-size: inherit;
+    border-radius: 1em;
+    border: 0;
+    transition: .35s ease-in-out;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.check label {
+    width: 2.2em;
+    height: 1em;
+    background: #d7d7d7;
     overflow: hidden;
-    white-space: nowrap;
-    color: var(--animation-color);
-    border-right: var(--border-right) solid var(--animation-color);
-    transition: width 0.5s ease;
-    -webkit-text-stroke: 1px var(--animation-color);
 }
 
-/* Ensure the text is visible by default */
-.button:not(:hover) .hover-text {
-    width: 100%;
-    color: transparent;
-    border-right: none;
-    -webkit-text-stroke: 1px var(--text-stroke-color);
+.check input[type="checkbox"] {
+    position: absolute;
+    z-index: 1;
+    width: .8em;
+    height: .8em;
+    top: .1em;
+    left: .1em;
+    background: linear-gradient(45deg, #dedede, #ffffff);
+    box-shadow: 0 6px 7px rgba(0,0,0,0.3);
+    outline: none;
 }
 
-/* Hover effect */
-.button:hover .hover-text {
-    width: 100%;
-    filter: drop-shadow(0 0 15px var(--animation-color));
+.check input[type="checkbox"]:checked {
+    left: 1.3em;
 }
 
-/* Female Mode Button */
-#female-mode {
-    --animation-color: #5B5EA6; /* Purple for Female Mode */
+.check input[type="checkbox"]:checked + label {
+    background: linear-gradient(90deg, #5B5EA6, #4A5EA6); /* Female Mode gradient */
 }
 
-/* Male Mode Button */
-#male-mode {
-    --animation-color: #2ECC71; /* Green for Male Mode */
+.check label::before,
+.check label::after {
+    content: "· ·";
+    position: absolute;
+    overflow: hidden;
+    left: .50em;
+    top: .5em;
+    height: 1em;
+    letter-spacing: -.04em;
+    color: #9b9b9b;
+    font-family: "Times New Roman", serif;
+    z-index: 2;
+    font-size: .6em;
+    border-radius: 0;
+    transform-origin: 0 0 -.5em;
+    backface-visibility: hidden;
 }
 
-/* Active states */
-.female-mode #female-mode .hover-text,
-.male-mode #male-mode .hover-text {
-    width: 100%;
-    color: var(--animation-color);
-    -webkit-text-stroke: 1px var(--animation-color);
-    filter: drop-shadow(0 0 15px var(--animation-color));
-    border-right: var(--border-right) solid var(--animation-color);
+.check label::after {
+    content: "?";
+    top: .65em;
+    left: .6em;
+    height: .1em;
+    width: .35em;
+    font-size: .2em;
+    transform-origin: 0 0 -.4em;
+}
+
+.check input[type="checkbox"]:checked + label::before,
+.check input[type="checkbox"]:checked + label::after {
+    left: 2.55em;
+    top: .4em;
+    line-height: .1em;
+    transform: rotateY(360deg);
+}
+
+.check input[type="checkbox"]:checked + label::after {
+    height: .16em;
+    top: .55em;
+    left: 2.6em;
+    font-size: .6em;
+    line-height: 0;
 }
 
 .chatbox {
