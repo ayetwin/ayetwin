@@ -91,38 +91,25 @@ body::after {
     gap: 0.8rem;
 }
 
-/* New button styles from Uiverse.io, adapted for our color scheme */
+/* Uiverse.io button style, adapted for our color scheme */
 .button {
     margin: 0;
     height: auto;
     background: transparent;
-    padding: 0.7rem 1.4rem; /* Added padding to match previous size */
+    padding: 0;
     border: none;
     cursor: pointer;
-    position: relative;
-    font-family: 'Roboto', sans-serif; /* Match the app's font */
+    --border-right: 4px;
+    --text-stroke-color: rgba(255, 255, 255, 0.6);
+    --fs-size: 1rem;
     letter-spacing: 2px;
     text-decoration: none;
-    font-size: 1rem; /* Adjusted font size */
+    font-size: var(--fs-size);
+    font-family: 'Roboto', sans-serif;
+    position: relative;
     text-transform: uppercase;
     color: transparent;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6); /* Text stroke */
-    transition: all 0.3s ease;
-}
-
-/* Add frosted glass effect to the button container */
-.button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 2rem;
-    background: linear-gradient(45deg, rgba(150, 150, 150, 0.2), rgba(100, 100, 100, 0.2));
-    backdrop-filter: blur(10px);
-    z-index: -1;
-    transition: all 0.3s ease;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
 }
 
 /* Hover text for the animation */
@@ -132,7 +119,7 @@ body::after {
     content: attr(data-text);
     width: 0%;
     inset: 0;
-    border-right: 4px solid; /* Adjusted border width */
+    border-right: var(--border-right) solid;
     overflow: hidden;
     transition: 0.5s;
 }
