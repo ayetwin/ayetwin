@@ -2,7 +2,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #1C2526 0%, #0F1419 100%);
+    background: #0A0F14; /* Deep, rich base color */
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -12,18 +13,48 @@ body {
     overflow-y: auto;
 }
 
+/* Add a layered background with gradient and shimmer */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        /* Subtle radial gradient for metallic accent */
+        radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.1), transparent 50%),
+        /* Main gradient */
+        linear-gradient(135deg, #0A0F14 0%, #1C2526 100%);
+    z-index: -1;
+    animation: shimmer 15s infinite linear;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 200% 200%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
 .container {
     text-align: center;
-    margin-top: 2rem; /* Reduced top margin */
+    margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
 .header {
     display: flex;
-    justify-content: center; /* Center the logo and buttons */
+    justify-content: center;
     align-items: center;
-    gap: 2rem; /* Space between logo and buttons */
-    margin-bottom: 1rem; /* Space between header and chatbox */
+    gap: 2rem;
+    margin-bottom: 1rem;
 }
 
 .logo {
