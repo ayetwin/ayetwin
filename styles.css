@@ -17,30 +17,25 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between; /* Logo on left, buttons on right */
+    align-items: center;
 }
 
 .logo {
-    width: 100px; /* Adjust based on your logo's size */
+    width: 200px; /* Doubled from 100px */
     height: auto;
 }
 
-.container {
-    text-align: center;
-    margin-top: 6rem; /* Adjusted to account for logo */
-    margin-bottom: 2rem;
-}
-
-h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    transition: color 0.3s ease;
+.mode-toggle {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
 }
 
 .mode-toggle button {
     padding: 0.8rem 1.5rem;
-    margin: 0.5rem;
     font-size: 1rem;
     cursor: pointer;
     border: none;
@@ -50,6 +45,19 @@ h1 {
 
 .mode-toggle button:hover {
     transform: scale(1.05);
+}
+
+.container {
+    text-align: center;
+    margin-top: 6rem; /* Adjusted to account for header */
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    transition: color 0.3s ease;
 }
 
 .chatbox {
@@ -66,7 +74,7 @@ h1 {
 
 .messages {
     height: 20rem;
-    Overflow-y: auto;
+    overflow-y: auto;
     margin-bottom: 1.5rem;
     padding-bottom: 0.8rem;
 }
