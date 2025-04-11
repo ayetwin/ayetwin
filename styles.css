@@ -8,28 +8,28 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    color: #FFFFFF;
+    color: white;
 }
 
 .container {
     text-align: center;
-    margin-top: 60px; /* Keeps title clear of browser bar */
+    margin-top: 6rem;
 }
 
 h1 {
     font-family: 'Poppins', sans-serif;
-    font-size: 3em;
-    margin-bottom: 20px;
+    font-size: 3rem;
+    margin-bottom: 2rem;
     transition: color 0.3s ease;
 }
 
 .mode-toggle button {
-    padding: 12px 24px;
-    margin: 0 10px;
-    font-size: 1.2em;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+    font-size: 1.2rem;
     cursor: pointer;
     border: none;
-    border-radius: 30px;
+    border-radius: 2rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -38,134 +38,182 @@ h1 {
 }
 
 .chatbox {
-    width: 400px;
-    height: 500px;
-    background: #2C3E50;
-    border-radius: 20px;
-    padding: 20px;
-    margin-top: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    width: 40rem;
+    height: 55rem;
+    background-color: #2C3E50;
+    border-radius: 2rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 .messages {
-    height: 400px;
+    height: 45rem;
     overflow-y: auto;
-    margin-bottom: 20px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 
 .messages p {
-    margin: 10px 0;
-    padding: 12px 18px;
-    border-radius: 20px;
-    max-width: 70%;
+    position: relative;
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+    max-width: 75%;
     word-wrap: break-word;
-    opacity: 0;
+    box-shadow: 0 0.2rem 4px rgba(0, 0, 0, 0.1);
     animation: fadeIn 0.5s ease forwards;
 }
 
-.messages p:nth-child(odd) { /* User messages */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(1rem); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.messages p:nth-child(odd) {
     align-self: flex-end;
-    background: #D3D3D3;
-    color: #000000;
+    text-align: right;
 }
 
-.messages p:nth-child(even) { /* Bot messages */
+.messages p:nth-child(odd)::after {
+    content: '';
+    position: absolute;
+    right: -1.5rem;
+    top: 0.8rem;
+    width: 0;
+    height: 0;
+    border-left: 0.8rem solid transparent;
+    border-top: 0.8rem solid transparent;
+    border-bottom: 0.8rem solid transparent;
+}
+
+.messages p:nth-child(even) {
     align-self: flex-start;
-    background: #00FF00;
-    color: #FFFFFF;
+    text-align: left;
 }
 
-input {
-    width: 70%;
-    padding: 12px;
-    font-size: 1em;
-    border-radius: 30px;
+.messages p:nth-child(even)::after {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 0.8rem;
+    width: 0;
+    height: 0;
+    border-right: 0.8rem solid transparent;
+    border-top: 0.8rem solid transparent;
+    border-bottom: 0.8rem solid transparent;
+}
+
+.input-area {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.input-area input {
+    flex-grow: 1;
+    padding: 1rem;
+    border-radius: 2rem;
+    background-color: #34495E;
+    color: white;
     border: none;
-    background: #34495E;
-    color: #FFFFFF;
     outline: none;
 }
 
-#send-btn {
-    padding: 12px 24px;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 30px;
+.input-area button {
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    background-color: #5B5EA6;
+    color: white;
     border: none;
-    background: #5B5EA6;
-    color: #FFFFFF;
+    cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-#send-btn:hover {
-    background-color: #7D84B2;
+.input-area button:hover {
     transform: scale(1.05);
 }
 
 /* Female Mode */
 .female-mode h1 {
-    color: #FFC107; /* Yellow title */
+    color: #FFC107;
 }
 
 .female-mode .mode-toggle #female-mode {
-    background-color: #5B5EA6; /* Purple */
-    color: #FFFFFF;
+    background-color: #5B5EA6;
+    color: white;
 }
 
 .female-mode .mode-toggle #male-mode {
     background-color: #34495E;
-    color: #FFFFFF;
+    color: white;
 }
 
-.female-mode .messages p:nth-child(odd) { /* User messages */
-    background: #F5A9B8; /* Light pink */
-    color: #FFFFFF;
+.female-mode .messages p:nth-child(odd) {
+    background: linear-gradient(to right, #F5A9B8, #E9A9B8);
+    color: black;
 }
 
-.female-mode .messages p:nth-child(even) { /* Bot messages */
-    background: #5B5EA6; /* Purple */
-    color: #FFFFFF;
+.female-mode .messages p:nth-child(odd)::after {
+    border-left-color: #F5A9B8;
 }
 
-.female-mode #send-btn {
-    background: #5B5EA6;
+.female-mode .messages p:nth-child(even) {
+    background: linear-gradient(to right, #5B5EA6, #4A5EA6);
+    color: white;
+}
+
+.female-mode .messages p:nth-child(even)::after {
+    border-right-color: #5B5EA6;
+}
+
+.female-mode .input-area button {
+    background: linear-gradient(to right, #5B5EA6, #4A5EA6);
+    color: white;
+}
+
+.female-mode .input-area button:hover {
+    background: linear-gradient(to right, #7D84B2, #6C74A2);
 }
 
 /* Male Mode */
 .male-mode h1 {
-    color: #FFFFFF; /* White title */
+    color: white;
 }
 
 .male-mode .mode-toggle #male-mode {
-    background-color: #00FF00; /* Green */
-    color: #000000;
+    background: linear-gradient(to right, #2ECC71, #27AE60);
+    color: white;
 }
 
 .male-mode .mode-toggle #female-mode {
     background-color: #34495E;
-    color: #FFFFFF;
+    color: white;
 }
 
-.male-mode .messages p:nth-child(odd) { /* User messages */
-    background: #D3D3D3; /* Light gray */
-    color: #000000;
+.male-mode .messages p:nth-child(odd) {
+    background: linear-gradient(to right, #D3D3D3, #C0C0C0);
+    color: black;
 }
 
-.male-mode .messages p:nth-child(even) { /* Bot messages */
-    background: #00FF00; /* Green */
-    color: #FFFFFF;
+.male-mode .messages p:nth-child(odd)::after {
+    border-left-color: #D3D3D3;
 }
 
-.male-mode #send-btn {
-    background: #00FF00;
-    color: #000000;
+.male-mode .messages p:nth-child(even) {
+    background: linear-gradient(to right, #2ECC71, #27AE60);
+    color: white;
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+.male-mode .messages p:nth-child(even)::after {
+    border-right-color: #2ECC71;
+}
+
+.male-mode .input-area button {
+    background: linear-gradient(to right, #2ECC71, #27AE60);
+    color: white;
+}
+
+.male-mode .input-area button:hover {
+    background: linear-gradient(to right, #3CB37A, #2E8B57);
 }
