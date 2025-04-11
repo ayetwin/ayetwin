@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #1C2526;
+    background: linear-gradient(135deg, #1C2526 0%, #0F1419 100%); /* Gradient background */
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -13,24 +13,25 @@ body {
 }
 
 header {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     padding: 1rem 2rem;
     display: flex;
-    justify-content: space-between; /* Logo on left, buttons on right */
+    justify-content: space-between;
     align-items: center;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent header */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .logo {
-    width: 200px; /* Doubled from 100px */
+    width: 200px;
     height: auto;
 }
 
 .mode-toggle {
     display: flex;
-    justify-content: flex-end;
     gap: 0.5rem;
 }
 
@@ -40,16 +41,19 @@ header {
     cursor: pointer;
     border: none;
     border-radius: 1.5rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    background: linear-gradient(45deg, #34495E, #2C3E50); /* Default gradient */
+    color: white;
+    transition: all 0.3s ease;
 }
 
 .mode-toggle button:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
 .container {
     text-align: center;
-    margin-top: 6rem; /* Adjusted to account for header */
+    margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
@@ -58,6 +62,7 @@ h1 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     transition: color 0.3s ease;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .chatbox {
@@ -65,11 +70,14 @@ h1 {
     max-width: 80vw;
     height: 30rem;
     max-height: 60vh;
-    background-color: #2C3E50;
+    background: rgba(44, 62, 80, 0.9); /* Semi-transparent background */
     border-radius: 2rem;
     padding: 1.5rem;
     margin-top: 1.5rem;
-    box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1), 0 0 40px rgba(255, 255, 255, 0.05); /* Glow effect */
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    border-image: linear-gradient(45deg, #5B5EA6, #2ECC71) 1;
 }
 
 .messages {
@@ -87,7 +95,11 @@ h1 {
     max-width: 75%;
     word-wrap: break-word;
     box-shadow: 0 0.2rem 4px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.5s ease forwards;
+    transition: all 0.3s ease;
+}
+
+.messages p:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 @keyframes fadeIn {
@@ -143,20 +155,22 @@ h1 {
     color: white;
     border: none;
     outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .input-area button {
     padding: 0.8rem 1.5rem;
     border-radius: 1.5rem;
-    background-color: #5B5EA6;
+    background: linear-gradient(45deg, #5B5EA6, #4A5EA6);
     color: white;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .input-area button:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
 /* Female Mode */
@@ -165,12 +179,12 @@ h1 {
 }
 
 .female-mode .mode-toggle #female-mode {
-    background-color: #5B5EA6;
+    background: linear-gradient(45deg, #5B5EA6, #4A5EA6);
     color: white;
 }
 
 .female-mode .mode-toggle #male-mode {
-    background-color: #34495E;
+    background: linear-gradient(45deg, #34495E, #2C3E50);
     color: white;
 }
 
@@ -193,12 +207,11 @@ h1 {
 }
 
 .female-mode .input-area button {
-    background: linear-gradient(to right, #5B5EA6, #4A5EA6);
-    color: white;
+    background: linear-gradient(45deg, #5B5EA6, #4A5EA6);
 }
 
 .female-mode .input-area button:hover {
-    background: linear-gradient(to right, #7D84B2, #6C74A2);
+    background: linear-gradient(45deg, #7D84B2, #6C74A2);
 }
 
 /* Male Mode */
@@ -207,12 +220,12 @@ h1 {
 }
 
 .male-mode .mode-toggle #male-mode {
-    background: linear-gradient(to right, #2ECC71, #27AE60);
+    background: linear-gradient(45deg, #2ECC71, #27AE60);
     color: white;
 }
 
 .male-mode .mode-toggle #female-mode {
-    background-color: #34495E;
+    background: linear-gradient(45deg, #34495E, #2C3E50);
     color: white;
 }
 
@@ -235,10 +248,9 @@ h1 {
 }
 
 .male-mode .input-area button {
-    background: linear-gradient(to right, #2ECC71, #27AE60);
-    color: white;
+    background: linear-gradient(45deg, #2ECC71, #27AE60);
 }
 
 .male-mode .input-area button:hover {
-    background: linear-gradient(to right, #3CB37A, #2E8B57);
+    background: linear-gradient(45deg, #3CB37A, #2E8B57);
 }
