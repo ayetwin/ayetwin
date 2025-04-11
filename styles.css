@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: #1C2526; /* Solid dark background */
+    background: linear-gradient(135deg, #1C2526 0%, #0F1419 100%);
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -18,8 +18,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.5); /* Slightly darker header */
-    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
     position: sticky;
     top: 0;
     z-index: 10;
@@ -32,54 +32,55 @@ header {
 
 .mode-toggle {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.8rem;
 }
 
 .mode-toggle button {
-    padding: 0.8rem 1.5rem;
+    padding: 0.7rem 1.4rem;
     font-size: 1rem;
     cursor: pointer;
     border: none;
-    border-radius: 2rem; /* More rounded, like the reference */
-    background: #34495E; /* Default color */
+    border-radius: 2rem;
+    background: linear-gradient(45deg, #2C3E50, #34495E);
     color: white;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .mode-toggle button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
 .container {
     text-align: center;
-    margin-top: 1rem; /* Reduced margin since no title */
+    margin-top: 1rem;
     margin-bottom: 2rem;
 }
 
 .chatbox {
-    width: 40rem;
-    max-width: 80vw;
-    height: 30rem;
-    max-height: 60vh;
-    background: rgba(44, 62, 80, 0.95); /* More opaque for readability */
-    border-radius: 2rem;
-    padding: 1.5rem;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    width: 38rem; /* Slightly more compact */
+    max-width: 85vw;
+    height: 28rem; /* Slightly shorter */
+    max-height: 55vh;
+    background: rgba(44, 62, 80, 0.95);
+    border-radius: 2.5rem;
+    padding: 1.2rem;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.15), 0 0 50px rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .messages {
-    height: 20rem;
+    height: 18rem; /* Adjusted for smaller chatbox */
     overflow-y: auto;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.8rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
 }
 
 .messages p {
     position: relative;
-    margin-bottom: 0.8rem;
-    padding: 0.8rem 1.2rem;
+    margin-bottom: 0.6rem;
+    padding: 0.7rem 1.1rem;
     border-radius: 1.5rem;
     max-width: 75%;
     word-wrap: break-word;
@@ -92,7 +93,7 @@ header {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(0.8rem); }
+    from { opacity: 0; transform: translateY(0.6rem); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -104,13 +105,13 @@ header {
 .messages p:nth-child(odd)::after {
     content: '';
     position: absolute;
-    right: -1rem;
-    top: 0.6rem;
+    right: -0.8rem;
+    top: 0.5rem;
     width: 0;
     height: 0;
-    border-left: 0.6rem solid transparent;
-    border-top: 0.6rem solid transparent;
-    border-bottom: 0.6rem solid transparent;
+    border-left: 0.5rem solid transparent;
+    border-top: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid transparent;
 }
 
 .messages p:nth-child(even) {
@@ -121,55 +122,56 @@ header {
 .messages p:nth-child(even)::after {
     content: '';
     position: absolute;
-    left: -1rem;
-    top: 0.6rem;
+    left: -0.8rem;
+    top: 0.5rem;
     width: 0;
     height: 0;
-    border-right: 0.6rem solid transparent;
-    border-top: 0.6rem solid transparent;
-    border-bottom: 0.6rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-top: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid transparent;
 }
 
 .input-area {
     display: flex;
-    gap: 0.8rem;
-    margin-top: 0.8rem;
+    gap: 0.6rem;
+    margin-top: 0.6rem;
 }
 
 .input-area input {
     flex-grow: 1;
-    padding: 0.8rem;
+    padding: 0.7rem;
     border-radius: 1.5rem;
     background-color: #34495E;
     color: white;
     border: none;
     outline: none;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
 }
 
 .input-area button {
-    padding: 0.8rem 1.5rem;
+    padding: 0.7rem 1.4rem;
     border-radius: 1.5rem;
-    background: #5B5EA6;
+    background: linear-gradient(45deg, #5B5EA6, #4A5EA6);
     color: white;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .input-area button:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
 /* Female Mode */
 .female-mode .mode-toggle #female-mode {
-    background: #5B5EA6;
+    background: linear-gradient(45deg, #5B5EA6, #4A5EA6);
     color: white;
 }
 
 .female-mode .mode-toggle #male-mode {
-    background: #34495E;
+    background: linear-gradient(45deg, #34495E, #2C3E50);
     color: white;
 }
 
@@ -192,21 +194,21 @@ header {
 }
 
 .female-mode .input-area button {
-    background: #5B5EA6;
+    background: linear-gradient(45deg, #5B5EA6, #4A5EA6);
 }
 
 .female-mode .input-area button:hover {
-    background: #7D84B2;
+    background: linear-gradient(45deg, #7D84B2, #6C74A2);
 }
 
 /* Male Mode */
 .male-mode .mode-toggle #male-mode {
-    background: #2ECC71;
+    background: linear-gradient(45deg, #2ECC71, #27AE60);
     color: white;
 }
 
 .male-mode .mode-toggle #female-mode {
-    background: #34495E;
+    background: linear-gradient(45deg, #34495E, #2C3E50);
     color: white;
 }
 
@@ -229,9 +231,9 @@ header {
 }
 
 .male-mode .input-area button {
-    background: #2ECC71;
+    background: linear-gradient(45deg, #2ECC71, #27AE60);
 }
 
 .male-mode .input-area button:hover {
-    background: #3CB37A;
+    background: linear-gradient(45deg, #3CB37A, #2E8B57);
 }
