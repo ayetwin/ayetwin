@@ -1,24 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const femaleBtn = document.getElementById('female-mode');
-    const maleBtn = document.getElementById('male-mode');
+    const checkbox = document.getElementById('check');
     const body = document.body;
     const messages = document.getElementById('messages');
     const userInput = document.getElementById('user-input');
     const sendBtn = document.getElementById('send-btn');
 
-    femaleBtn.addEventListener('click', () => {
-        body.classList.remove('male-mode');
-        body.classList.add('female-mode');
-    });
+    // Default to Male Mode (unchecked)
+    body.classList.add('male-mode');
 
-    maleBtn.addEventListener('click', () => {
-        body.classList.remove('female-mode');
-        body.classList.add('male-mode');
+    // Toggle between Male and Female modes based on checkbox state
+    checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+            body.classList.remove('male-mode');
+            body.classList.add('female-mode');
+        } else {
+            body.classList.remove('female-mode');
+            body.classList.add('male-mode');
+        }
     });
 
     sendBtn.addEventListener('click', sendMessage);
     userInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') sendMessage();
+    });
+
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY;
+        body.classList.add('scrolling');
+        body.style.setProperty('--scroll', scrollPosition);
     });
 
     function sendMessage() {
