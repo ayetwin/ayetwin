@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: #0A0F14; /* Deep, rich base color */
+    background: #0A0F14;
     position: relative;
     display: flex;
     justify-content: center;
@@ -13,7 +13,7 @@ body {
     overflow-y: auto;
 }
 
-/* Add a layered background with gradient and shimmer */
+/* Main background with vibrant gradient and gold accent */
 body::before {
     content: '';
     position: fixed;
@@ -22,24 +22,51 @@ body::before {
     width: 100%;
     height: 100%;
     background: 
-        /* Subtle radial gradient for metallic accent */
-        radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.1), transparent 50%),
-        /* Main gradient */
-        linear-gradient(135deg, #0A0F14 0%, #1C2526 100%);
+        /* Subtle radial gradient for gold accent */
+        radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.15), transparent 50%),
+        /* Vibrant multi-layered gradient */
+        linear-gradient(45deg, #0A0F14 0%, #1C2526 50%, #2A1B3D 100%),
+        /* Deep base layer */
+        #0A0F14;
     z-index: -1;
-    animation: shimmer 15s infinite linear;
+    transform: translateY(0);
+    transition: transform 0.1s ease-out; /* Smooth parallax effect */
 }
 
-/* Shimmer animation */
-@keyframes shimmer {
+/* Add scroll-based parallax effect */
+body.scrolling::before {
+    transform: translateY(calc(var(--scroll) * -0.2px));
+}
+
+/* Particle effect for glowing dots */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02), transparent 70%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.3)"/></svg>') repeat;
+    background-size: 50px 50px;
+    opacity: 0.5;
+    z-index: -1;
+    animation: particle-glow 20s infinite linear;
+}
+
+/* Particle animation */
+@keyframes particle-glow {
     0% {
-        background-position: 0% 0%;
+        background-position: 0 0;
+        opacity: 0.5;
     }
     50% {
-        background-position: 200% 200%;
+        opacity: 0.7;
     }
     100% {
-        background-position: 0% 0%;
+        background-position: 50px 50px;
+        opacity: 0.5;
     }
 }
 
