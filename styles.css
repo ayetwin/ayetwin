@@ -337,7 +337,7 @@ nav a:hover {
 }
 
 .female-mode .input-info .sign-in-btn {
-    box-shadow: 0 4px 8px rgba(255, 0, 255, 0.3);
+    box-shadow: 0 4px 8px rgba(255, 0, 250, 0.3);
 }
 
 .female-mode .input-info .sign-in-btn:hover {
@@ -439,52 +439,52 @@ nav a:hover {
 /* Mobile Adjustments */
 @media (max-width: 768px) {
     header {
-        padding: 0.2rem 0.3rem; /* Reduce padding on mobile */
+        padding: 0.2rem 0.3rem; /* Keep header padding the same */
     }
 
     .header-content {
         flex-wrap: wrap; /* Allow wrapping if needed */
         justify-content: space-between; /* Distribute space evenly */
-        padding: 0 0.5rem; /* Add some padding to prevent edge squishing */
+        padding: 0 0.3rem; /* Slightly reduce padding to fit larger elements */
     }
 
     .logo {
-        width: 60px; /* Reduce logo size on mobile */
-        margin-left: 0.5rem;
+        width: 70px; /* Increase logo size on mobile */
+        margin-left: 0.3rem;
         margin-right: 0.3rem;
     }
 
     nav {
-        gap: 0.5rem; /* Reduce gap between nav items */
+        gap: 0.6rem; /* Slightly reduce gap to fit larger elements */
     }
 
     nav a {
-        font-size: 0.7rem; /* Slightly smaller font size for nav links */
+        font-size: 0.8rem; /* Increase font size for nav links */
     }
 
     .mode-toggle {
-        width: 32px; /* Reduce toggle size */
-        height: 16px;
+        width: 36px; /* Increase toggle size */
+        height: 18px;
     }
 
     .mode-toggle-label .toggle-slider {
-        width: 12px; /* Adjust slider size */
-        height: 12px;
+        width: 14px; /* Adjust slider size */
+        height: 14px;
         top: 2px;
         left: 2px;
     }
 
     .mode-toggle-input:checked + .mode-toggle-label .toggle-slider {
-        transform: translateX(16px); /* Adjust for smaller toggle width */
+        transform: translateX(18px); /* Adjust for larger toggle width */
     }
 
     .auth-buttons {
-        gap: 0.3rem; /* Reduce gap between buttons */
-        margin-right: 0.5rem;
+        gap: 0.3rem; /* Keep gap small to fit larger buttons */
+        margin-right: 0.3rem;
     }
 
     .auth-btn {
-        padding: 0.2rem 0.5rem; /* Reduce padding for buttons */
-        font-size: 0.6rem; /* Smaller font size for buttons */
+        padding: 0.3rem 0.6rem; /* Increase padding for buttons */
+        font-size: 0.7rem; /* Increase font size for buttons */
     }
 }
