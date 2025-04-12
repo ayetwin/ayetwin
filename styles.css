@@ -237,28 +237,32 @@ nav a:hover {
 
 .chat-container {
     width: 100%;
-    max-width: 75vw; /* Extended to include the send button (was 70vw) */
+    max-width: 70vw; /* Matches the original width */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* Centers the chat area */
 }
 
 .messages {
     width: 100%;
     max-width: 100%; /* Matches the chat-container width */
-    padding: 1rem 0;
+    padding: 1rem;
     margin-top: 3rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    background: #1A1A1A; /* Slightly darker background to visually extend the chat area */
+    border-radius: 1rem;
+    position: relative;
+    padding-bottom: 4rem; /* Extra padding to include the input area */
 }
 
 .messages p {
     position: relative;
     padding: 0.7rem 1.1rem;
     border-radius: 1rem;
-    max-width: 70%; /* Keeps the message content width consistent */
+    max-width: 75%; /* Keeps the message content width consistent */
     word-wrap: break-word;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
@@ -329,17 +333,10 @@ nav a:hover {
     margin-right: auto;
 }
 
-.chat-footer {
-    width: 100%;
-    max-width: 100%; /* Matches the chat-container width */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
 .input-info {
     width: 100%;
-    max-width: 100%; /* Matches the chat-container width */
+    max-width: 70vw; /* Matches the original width */
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -375,11 +372,14 @@ nav a:hover {
 
 .input-area {
     width: 100%;
-    max-width: 100%; /* Matches the chat-container width */
+    max-width: 100%; /* Matches the messages container width */
+    position: absolute;
+    bottom: 1rem; /* Positions the input area at the bottom of the messages container */
+    left: 1rem; /* Aligns with the padding of the messages container */
+    right: 1rem; /* Aligns with the padding of the messages container */
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    padding-bottom: 0.5rem;
 }
 
 .input-area input {
@@ -391,7 +391,7 @@ nav a:hover {
     border: 1px solid #333333;
     outline: none;
     font-size: 1rem;
-    max-width: calc(70% - 3.1rem); /* Matches the message width, accounting for send button and gap */
+    max-width: calc(75% - 3.1rem); /* Matches the message width, accounting for send button and gap */
 }
 
 .input-area button {
