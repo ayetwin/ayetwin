@@ -79,7 +79,7 @@ nav a:hover {
 
 .mode-toggle-label .male-icon,
 .mode-toggle-label .female-icon {
-    display: none; /* Remove the male and female symbols */
+    display: none;
 }
 
 .mode-toggle-label .toggle-slider {
@@ -191,6 +191,12 @@ nav a:hover {
     margin-bottom: 0.5rem;
     position: relative;
     display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease; /* Add transition for hover effect */
+}
+
+.welcome-message h1:hover {
+    transform: scale(1.05); /* Slightly scale up the text */
+    color: #FFFFFF; /* Brighten the text color on hover */
 }
 
 .welcome-message h1::after {
@@ -202,6 +208,12 @@ nav a:hover {
     margin-left: 0.5rem;
     top: 50%;
     transform: translateY(-50%);
+    transition: transform 0.3s ease, color 0.3s ease; /* Add transition for hover effect */
+}
+
+.welcome-message h1:hover::after {
+    transform: translateY(-50%) translateX(0.3rem); /* Move the arrow to the right */
+    color: #FFFFFF; /* Brighten the arrow color on hover */
 }
 
 .welcome-message p {
@@ -367,8 +379,8 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem; /* Increased font size for a bolder arrow */
-    font-weight: 700; /* Added font weight for a bolder appearance */
+    font-size: 1.5rem;
+    font-weight: 700;
     transition: all 0.3s ease;
     margin-left: 0.6rem;
 }
