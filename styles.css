@@ -164,7 +164,7 @@ nav a:hover {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 2rem 0 4rem 0; /* Increased padding-bottom to push content up */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -173,7 +173,7 @@ nav a:hover {
 
 .welcome-message {
     position: absolute;
-    bottom: 5rem; /* Moved up (was 7rem) */
+    bottom: 4rem; /* Adjusted to maintain spacing with input area */
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -294,7 +294,7 @@ nav a:hover {
     align-items: center;
     font-size: 0.9rem;
     color: #9b9b9b;
-    padding: 0.5rem 0; /* Reduced padding to move up */
+    padding: 0.5rem 0;
 }
 
 .input-info .sign-in-btn {
@@ -319,7 +319,7 @@ nav a:hover {
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    padding-bottom: 0.5rem; /* Reduced padding to move up */
+    padding-bottom: 0.5rem;
 }
 
 .input-area input {
