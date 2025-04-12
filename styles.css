@@ -173,7 +173,7 @@ nav a:hover {
 
 .welcome-message {
     position: absolute;
-    bottom: 7rem; /* Moved up slightly */
+    bottom: 5rem; /* Moved up (was 7rem) */
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -294,7 +294,7 @@ nav a:hover {
     align-items: center;
     font-size: 0.9rem;
     color: #9b9b9b;
-    padding: 1rem 0; /* Increased padding to move up */
+    padding: 0.5rem 0; /* Reduced padding to move up */
 }
 
 .input-info .sign-in-btn {
@@ -319,7 +319,7 @@ nav a:hover {
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    padding-bottom: 2rem; /* Increased padding to move up */
+    padding-bottom: 0.5rem; /* Reduced padding to move up */
 }
 
 .input-area input {
