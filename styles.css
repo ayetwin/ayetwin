@@ -1,70 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background: #0A0F14;
-    position: relative;
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at 50% 50%, #1A1A1A 0%, #000000 100%);
     display: flex;
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
     margin: 0;
-    color: white;
+    color: #E0E0E0;
     overflow-y: auto;
-}
-
-/* Main background with vibrant gradient and gold accent */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.15), transparent 50%),
-        linear-gradient(45deg, #0A0F14 0%, #1C2526 50%, #2A1B3D 100%),
-        #0A0F14;
-    z-index: -1;
-    transform: translateY(0);
-    transition: transform 0.1s ease-out;
-}
-
-/* Add scroll-based parallax effect */
-body.scrolling::before {
-    transform: translateY(calc(var(--scroll) * -0.2px));
-}
-
-/* Particle effect for glowing dots */
-body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02), transparent 70%),
-        url('data:image/svg+xml,<svg xmlns="[invalid url, do not cite] width="1000" height="1000"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.3)"/></svg>') repeat;
-    background-size: 50px 50px;
-    opacity: 0.5;
-    z-index: -1;
-    animation: particle-glow 20s infinite linear;
-}
-
-/* Particle animation */
-@keyframes particle-glow {
-    0% {
-        background-position: 0 0;
-        opacity: 0.5;
-    }
-    50% {
-        opacity: 0.7;
-    }
-    100% {
-        background-position: 50px 50px;
-        opacity: 0.5;
-    }
 }
 
 .container {
@@ -88,51 +33,101 @@ body::after {
 
 .mode-toggle {
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 1rem;
 }
 
-.mode-label {
-    font-size: 1.2rem;
-    color: #ccc;
-    transition: color 0.3s ease;
-}
-
-.mode-toggle input[type="checkbox"]:checked ~ .mode-label:nth-child(3) {
-    color: #fff;
-}
-
-.mode-toggle input[type="checkbox"]:not(:checked) ~ .mode-label:nth-child(1) {
-    color: #fff;
-}
-
-/* Toggle switch styles */
+/* Toggle switch styles, adapted to match Julius.ai colors */
 .check {
     position: relative;
-    width: 4em; /* Larger width */
-    height: 2em; /* Larger height */
     background: linear-gradient(90deg, #2ECC71, #27AE60); /* Male Mode gradient */
-    border-radius: 2em;
+    line-height: 0;
+    font-size: 20px;
+}
+
+.check input[type="checkbox"],
+.check label,
+.check label::before,
+.check label::after {
+    appearance: none;
+    display: inline-block;
+    font-size: inherit;
+    border-radius: 1em;
+    border: 0;
+    transition: .35s ease-in-out;
+    box-sizing: border-box;
     cursor: pointer;
+}
+
+.check label {
+    width: 2.2em;
+    height: 1em;
+    background: #2A2A2A; /* Darker grey to match Julius.ai */
+    overflow: hidden;
 }
 
 .check input[type="checkbox"] {
     position: absolute;
-    top: 0.2em;
-    left: 0.2em;
-    width: 1.6em; /* Larger slider */
-    height: 1.6em; /* Larger slider */
-    background: #fff;
-    border-radius: 50%;
-    transition: left 0.3s ease;
+    z-index: 1;
+    width: .8em;
+    height: .8em;
+    top: .1em;
+    left: .1em;
+    background: linear-gradient(45deg, #E0E0E0, #FFFFFF);
+    box-shadow: 0 6px 7px rgba(0,0,0,0.3);
+    outline: none;
 }
 
 .check input[type="checkbox"]:checked {
-    left: calc(100% - 1.8em); /* Adjusted for larger size */
+    left: 1.3em;
 }
 
 .check input[type="checkbox"]:checked + label {
     background: linear-gradient(90deg, #5B5EA6, #4A5EA6); /* Female Mode gradient */
+}
+
+.check label::before,
+.check label::after {
+    content: "· ·";
+    position: absolute;
+    overflow: hidden;
+    left: .50em;
+    top: .5em;
+    height: 1em;
+    letter-spacing: -.04em;
+    color: #9b9b9b;
+    font-family: "Times New Roman", serif;
+    z-index: 2;
+    font-size: .6em;
+    border-radius: 0;
+    transform-origin: 0 0 -.5em;
+    backface-visibility: hidden;
+}
+
+.check label::after {
+    content: "?";
+    top: .65em;
+    left: .6em;
+    height: .1em;
+    width: .35em;
+    font-size: .2em;
+    transform-origin: 0 0 -.4em;
+}
+
+.check input[type="checkbox"]:checked + label::before,
+.check input[type="checkbox"]:checked + label::after {
+    left: 2.55em;
+    top: .4em;
+    line-height: .1em;
+    transform: rotateY(360deg);
+}
+
+.check input[type="checkbox"]:checked + label::after {
+    height: .16em;
+    top: .55em;
+    left: 2.6em;
+    font-size: .6em;
+    line-height: 0;
 }
 
 .chatbox {
@@ -140,12 +135,10 @@ body::after {
     max-width: 85vw;
     height: 28rem;
     max-height: 55vh;
-    background: linear-gradient(45deg, rgba(150, 150, 150, 0.2), rgba(100, 100, 100, 0.2));
-    backdrop-filter: blur(10px);
-    border-radius: 2.5rem;
+    background: #1A1A1A; /* Dark background like Julius.ai */
+    border-radius: 1rem;
     padding: 1.2rem;
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.15), 0 0 50px rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .messages {
@@ -159,33 +152,16 @@ body::after {
     position: relative;
     margin-bottom: 0.6rem;
     padding: 0.7rem 1.1rem;
-    border-radius: 1.5rem;
+    border-radius: 1rem;
     max-width: 75%;
     word-wrap: break-word;
-    background: linear-gradient(45deg, rgba(150, 150, 150, 0.2), rgba(100, 100, 100, 0.2));
-    backdrop-filter: blur(10px);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
-}
-
-/* Inner glow effect */
-.messages p::before {
-    content: '';
-    position: absolute;
-    top: -0.1rem;
-    left: -0.1rem;
-    width: calc(100% + 0.2rem);
-    height: calc(100% + 0.2rem);
-    border-radius: 1.6rem;
-    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), transparent 70%);
-    opacity: 0.3;
-    z-index: -1;
 }
 
 .messages p:hover {
     transform: scale(1.02);
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes fadeIn {
@@ -194,6 +170,8 @@ body::after {
 }
 
 .messages p:nth-child(odd) {
+    background: #2A2A2A; /* User messages */
+    color: #E0E0E0;
     align-self: flex-end;
     text-align: right;
 }
@@ -211,6 +189,8 @@ body::after {
 }
 
 .messages p:nth-child(even) {
+    background: #222222; /* Bot messages (default) */
+    color: #E0E0E0;
     align-self: flex-start;
     text-align: left;
 }
@@ -236,20 +216,18 @@ body::after {
 .input-area input {
     flex-grow: 1;
     padding: 0.7rem;
-    border-radius: 1.5rem;
-    background: linear-gradient(45deg, rgba(150, 150, 150, 0.2), rgba(100, 100, 100, 0.2));
-    backdrop-filter: blur(10px);
-    color: white;
-    border: none;
+    border-radius: 0.5rem;
+    background: #222222;
+    color: #E0E0E0;
+    border: 1px solid #333333;
     outline: none;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
 }
 
 .input-area button {
     padding: 0.7rem 1.4rem;
-    border-radius: 1.5rem;
-    background: linear-gradient(45deg, #5B5EA6, #4A5EA6);
-    color: white;
+    border-radius: 0.5rem;
+    background: #2ECC71; /* Neon green like Julius.ai */
+    color: #FFFFFF;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -258,24 +236,22 @@ body::after {
 
 .input-area button:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.5);
 }
 
 /* Female Mode */
 .female-mode .messages p:nth-child(odd) {
-    background: linear-gradient(to right, rgba(245, 169, 184, 0.7), rgba(233, 169, 184, 0.7));
-    backdrop-filter: blur(10px);
-    color: black;
+    background: #2A2A2A; /* Keep user message background */
+    color: #E0E0E0;
 }
 
 .female-mode .messages p:nth-child(odd)::after {
-    border-left-color: rgba(245, 169, 184, 0.7);
+    border-left-color: #2A2A2A;
 }
 
 .female-mode .messages p:nth-child(even) {
-    background: linear-gradient(to right, rgba(91, 94, 166, 0.7), rgba(74, 94, 166, 0.7));
-    backdrop-filter: blur(10px);
-    color: white;
+    background: rgba(91, 94, 166, 0.7); /* Purple for bot messages */
+    color: #E0E0E0;
 }
 
 .female-mode .messages p:nth-child(even)::after {
@@ -283,28 +259,26 @@ body::after {
 }
 
 .female-mode .input-area button {
-    background: linear-gradient(45deg, #5B5EA6, #4A5EA6);
+    background: #5B5EA6;
 }
 
 .female-mode .input-area button:hover {
-    background: linear-gradient(45deg, #7D84B2, #6C74A2);
+    box-shadow: 0 0 15px rgba(91, 94, 166, 0.5);
 }
 
 /* Male Mode */
 .male-mode .messages p:nth-child(odd) {
-    background: linear-gradient(to right, rgba(211, 211, 211, 0.7), rgba(192, 192, 192, 0.7));
-    backdrop-filter: blur(10px);
-    color: black;
+    background: #2A2A2A; /* Keep user message background */
+    color: #E0E0E0;
 }
 
 .male-mode .messages p:nth-child(odd)::after {
-    border-left-color: rgba(211, 211, 211, 0.7);
+    border-left-color: #2A2A2A;
 }
 
 .male-mode .messages p:nth-child(even) {
-    background: linear-gradient(to right, rgba(46, 204, 113, 0.7), rgba(39, 174, 96, 0.7));
-    backdrop-filter: blur(10px);
-    color: white;
+    background: rgba(46, 204, 113, 0.7); /* Green for bot messages */
+    color: #E0E0E0;
 }
 
 .male-mode .messages p:nth-child(even)::after {
@@ -312,9 +286,9 @@ body::after {
 }
 
 .male-mode .input-area button {
-    background: linear-gradient(45deg, #2ECC71, #27AE60);
+    background: #2ECC71;
 }
 
 .male-mode .input-area button:hover {
-    background: linear-gradient(45deg, #3CB37A, #2E8B57);
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.5);
 }
