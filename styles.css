@@ -65,7 +65,7 @@ nav a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #2ECC71; /* Male Mode */
+    background: #2ECC71;
     border-radius: 15px;
     cursor: pointer;
     display: flex;
@@ -102,7 +102,7 @@ nav a:hover {
 }
 
 .mode-toggle-input:checked + .mode-toggle-label {
-    background: #5B5EA6; /* Female Mode */
+    background: #5B5EA6;
 }
 
 .mode-toggle-input:checked + .mode-toggle-label .toggle-slider {
@@ -189,7 +189,7 @@ nav a:hover {
 
 .messages {
     width: 100%;
-    max-width: 85vw;
+    max-width: 70vw; /* Reduced width */
     margin: 0 auto;
     padding: 1rem 0;
     flex-grow: 1;
@@ -235,7 +235,6 @@ nav a:hover {
 }
 
 .messages p.bot::before {
-    content: "";
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="%232ECC71"/></svg>') no-repeat left center;
     background-size: 20px 20px;
     padding-left: 25px;
@@ -253,7 +252,7 @@ nav a:hover {
     margin-top: 0.5rem;
     height: 1rem;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>') no-repeat left center,
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"></path><path d="m7 9 5-5 5 5"></path></svg>') no-repeat center center,
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24  chauffeur="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"></path><path d="m7 9 5-5 5 5"></path></svg>') no-repeat center center,
                 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>') no-repeat right center;
     background-size: 16px 16px;
     background-position: left center, center center, right center;
@@ -275,44 +274,40 @@ nav a:hover {
 }
 
 .input-info {
-    position: fixed;
-    bottom: 4rem;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
+    max-width: 70vw; /* Match the chat width */
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    max-width: 85vw;
     font-size: 0.9rem;
     color: #9b9b9b;
+    padding: 0.5rem 0;
 }
 
 .input-info .sign-in-btn {
     padding: 0.3rem 0.8rem;
     border-radius: 1rem;
-    background: #1E90FF;
-    color: #FFFFFF;
+    background: #1E1E1E; /* Dark to match bot message */
+    color: #E0E0E0;
     text-decoration: none;
     font-size: 0.9rem;
     transition: all 0.3s ease;
 }
 
 .input-info .sign-in-btn:hover {
-    background: #4DA8FF;
-    box-shadow: 0 0 10px rgba(30, 144, 255, 0.5);
+    background: #333333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .input-area {
-    position: fixed;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
+    max-width: 70vw; /* Match the chat width */
+    margin: 0 auto;
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    width: 100%;
-    max-width: 85vw;
+    padding-bottom: 1rem;
 }
 
 .input-area input {
