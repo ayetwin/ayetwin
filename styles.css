@@ -449,9 +449,9 @@ nav a:hover {
     }
 
     .logo {
-        width: 70px; /* Increase logo size on mobile */
+        width: 80px; /* Increase logo size on mobile to match desktop */
         margin-left: 0.3rem;
-        margin-right: 0.3rem;
+        margin-right: 0.2rem; /* Slightly reduce margin to fit larger logo */
     }
 
     nav {
@@ -459,32 +459,32 @@ nav a:hover {
     }
 
     nav a {
-        font-size: 0.8rem; /* Increase font size for nav links */
+        font-size: 0.8rem;
     }
 
     .mode-toggle {
-        width: 36px; /* Increase toggle size */
+        width: 36px;
         height: 18px;
     }
 
     .mode-toggle-label .toggle-slider {
-        width: 14px; /* Adjust slider size */
+        width: 14px;
         height: 14px;
         top: 2px;
         left: 2px;
     }
 
     .mode-toggle-input:checked + .mode-toggle-label .toggle-slider {
-        transform: translateX(18px); /* Adjust for larger toggle width */
+        transform: translateX(18px);
     }
 
     .auth-buttons {
-        gap: 0.3rem; /* Keep gap small to fit larger buttons */
+        gap: 0.3rem;
         margin-right: 0.3rem;
     }
 
     .auth-btn {
-        padding: 0.3rem 0.6rem; /* Increase padding for buttons */
-        font-size: 0.7rem; /* Increase font size for buttons */
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
     }
 }
