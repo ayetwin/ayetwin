@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const messages = document.getElementById('messages');
     const userInput = document.getElementById('user-input');
     const sendBtn = document.getElementById('send-btn');
+    const welcomeMessage = document.querySelector('.welcome-message');
+
+    let hasSentMessage = false;
 
     // Default to Male Mode (unchecked)
     body.classList.add('male-mode');
@@ -27,6 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function sendMessage() {
         const message = userInput.value.trim();
         if (!message) return;
+
+        // Hide welcome message on first message
+        if (!hasSentMessage) {
+            welcomeMessage.classList.add('hidden');
+            hasSentMessage = true;
+        }
 
         const userMsg = document.createElement('p');
         userMsg.classList.add('user');
