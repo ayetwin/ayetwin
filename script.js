@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const checkbox = document.getElementById('check');
+    const checkbox = document.getElementById('mode-toggle');
     const body = document.body;
     const messages = document.getElementById('messages');
     const userInput = document.getElementById('user-input');
