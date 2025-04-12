@@ -10,7 +10,7 @@ body {
 
 header {
     background: #121212;
-    padding: 0.3rem 0.5rem; /* Further reduced padding to make header smaller */
+    padding: 0.3rem 0.5rem;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -25,21 +25,22 @@ header {
 }
 
 .logo {
-    width: 80px; /* Further reduced logo size (was 100px) */
+    width: 80px;
     height: auto;
-    margin-right: 0.5rem; /* Reduced margin */
+    margin-right: 0.5rem;
+    margin-left: 1rem; /* Added margin to move logo inward */
 }
 
 nav {
     display: flex;
     align-items: center;
-    gap: 0.8rem; /* Slightly reduced gap */
+    gap: 0.8rem;
 }
 
 nav a {
     color: #E0E0E0;
     text-decoration: none;
-    font-size: 0.8rem; /* Further reduced font size */
+    font-size: 0.8rem;
     transition: color 0.3s ease;
 }
 
@@ -50,7 +51,7 @@ nav a:hover {
 .mode-toggle {
     position: relative;
     display: inline-block;
-    width: 40px; /* Further reduced toggle size */
+    width: 40px;
     height: 20px;
 }
 
@@ -67,7 +68,7 @@ nav a:hover {
     width: 100%;
     height: 100%;
     background: #2ECC71;
-    border-radius: 10px; /* Adjusted for smaller size */
+    border-radius: 10px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -78,7 +79,7 @@ nav a:hover {
 
 .mode-toggle-label .male-icon,
 .mode-toggle-label .female-icon {
-    font-size: 0.7rem; /* Further reduced icon size */
+    font-size: 0.7rem;
     color: #FFFFFF;
     opacity: 0.5;
 }
@@ -95,7 +96,7 @@ nav a:hover {
     position: absolute;
     top: 2px;
     left: 2px;
-    width: 16px; /* Adjusted for smaller toggle */
+    width: 16px;
     height: 16px;
     background: #FFFFFF;
     border-radius: 8px;
@@ -107,7 +108,7 @@ nav a:hover {
 }
 
 .mode-toggle-input:checked + .mode-toggle-label .toggle-slider {
-    transform: translateX(20px); /* Adjusted for smaller toggle */
+    transform: translateX(20px);
 }
 
 .mode-toggle-input:checked + .mode-toggle-label .male-icon {
@@ -130,10 +131,11 @@ nav a:hover {
     display: flex;
     gap: 0.4rem;
     margin-left: auto;
+    margin-right: 1rem; /* Added margin to move buttons inward */
 }
 
 .auth-btn {
-    padding: 0.3rem 0.6rem; /* Further reduced button size */
+    padding: 0.3rem 0.6rem;
     border-radius: 1rem;
     text-decoration: none;
     font-size: 0.7rem;
@@ -174,9 +176,29 @@ nav a:hover {
     align-items: center;
 }
 
+.page-title {
+    text-align: center;
+    margin: 6rem 0 0 0; /* Matches welcome-message margin-top */
+    width: 100%;
+    max-width: 70vw;
+}
+
+.page-title h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+}
+
+.page-title p {
+    font-size: 1.2rem;
+    color: #9b9b9b;
+    margin-bottom: 1rem;
+}
+
 .welcome-message {
     text-align: center;
-    margin: 6rem 0 1rem 0; /* Increased margin-top to move down more */
+    margin: 1rem 0; /* Adjusted to flow naturally after page-title */
     width: 100%;
     max-width: 70vw;
     transition: opacity 0.3s ease;
