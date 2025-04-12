@@ -164,19 +164,17 @@ nav a:hover {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 0 4rem 0; /* Increased padding-bottom to push content up */
+    padding: 1rem 0; /* Reduced top padding to bring content closer to header */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    position: relative;
+    justify-content: flex-start; /* Align content to the top */
+    align-items: center;
 }
 
 .welcome-message {
-    position: absolute;
-    bottom: 4rem; /* Adjusted to maintain spacing with input area */
-    left: 50%;
-    transform: translateX(-50%);
     text-align: center;
+    margin: 1rem 0; /* Flow naturally in the flex layout */
     width: 100%;
     max-width: 70vw;
     transition: opacity 0.3s ease;
@@ -204,7 +202,6 @@ nav a:hover {
     max-width: 70vw;
     margin: 0 auto;
     padding: 1rem 0;
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
