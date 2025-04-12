@@ -216,12 +216,13 @@ nav a:hover {
     color: #D0D0D0;
     margin-bottom: 0.5rem;
     position: relative;
-    display: inline-block; /* Ensures the arrow stays inline with the text */
+    display: inline-block;
 }
 
 .welcome-message h1::after {
-    content: "→"; /* Right arrow */
-    font-size: 2rem;
+    content: ">"; /* Thicker, wider "greater than" symbol */
+    font-size: 2.5rem; /* Slightly larger than the text for prominence */
+    font-weight: 900; /* Makes the symbol appear thicker */
     color: #D0D0D0; /* Matches the dull white of the text */
     position: absolute;
     margin-left: 0.5rem; /* Space between "power" and the arrow */
