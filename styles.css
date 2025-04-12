@@ -178,7 +178,7 @@ nav a:hover {
 
 .page-title {
     text-align: center;
-    margin: 0.5rem 0 0 0; /* Reduced margin-top to move closer to header */
+    margin: 0.5rem 0 0 0;
     width: 100%;
     max-width: 70vw;
     margin-bottom: 4rem;
@@ -213,13 +213,13 @@ nav a:hover {
 .welcome-message h1 {
     font-size: 2rem;
     font-weight: 700;
-    color: #D0D0D0; /* Duller white (was #FFFFFF) */
+    color: #D0D0D0;
     margin-bottom: 0.5rem;
 }
 
 .welcome-message p {
     font-size: 1rem;
-    color: #9b9bbf; /* Grey with a slight blue tint (was #9b9b9b) */
+    color: #9b9bbf;
 }
 
 .messages {
@@ -287,9 +287,7 @@ nav a:hover {
     margin-top: 0.5rem;
     height: 1rem;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>') no-repeat left center,
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24  관한
-
-24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"></path><path d="m7 9 5-5 5 5"></path></svg>') no-repeat center center,
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"></path><path d="m7 9 5-5 5 5"></path></svg>') no-repeat center center,
                 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>') no-repeat right center;
     background-size: 16px 16px;
     background-position: left center, center center, right center;
