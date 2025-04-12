@@ -178,15 +178,15 @@ nav a:hover {
 
 .page-title {
     text-align: center;
-    margin: 1rem 0 0 0; /* Reduced margin-top to move closer to header */
+    margin: 1rem 0 0 0;
     width: 100%;
     max-width: 70vw;
-    margin-bottom: 4rem; /* Increased margin-bottom for more space */
+    margin-bottom: 4rem;
 }
 
 .page-title h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 3.5rem; /* Increased font size (was 2.5rem) */
+    font-weight: 900; /* Increased boldness (was 700) */
     color: #FFFFFF;
     margin-bottom: 0.5rem;
 }
