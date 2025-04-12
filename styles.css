@@ -220,14 +220,14 @@ nav a:hover {
 }
 
 .welcome-message h1::after {
-    content: ">"; /* Thicker, wider "greater than" symbol */
-    font-size: 2.5rem; /* Slightly larger than the text for prominence */
-    font-weight: 900; /* Makes the symbol appear thicker */
-    color: #D0D0D0; /* Matches the dull white of the text */
+    content: ">";
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #D0D0D0;
     position: absolute;
-    margin-left: 0.5rem; /* Space between "power" and the arrow */
+    margin-left: 0.5rem;
     top: 50%;
-    transform: translateY(-50%); /* Vertically centers the arrow */
+    transform: translateY(-50%);
 }
 
 .welcome-message p {
@@ -341,11 +341,21 @@ nav a:hover {
     text-decoration: none;
     font-size: 0.9rem;
     transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 191, 255, 0.3); /* Default glow (male mode: blue) */
 }
 
 .input-info .sign-in-btn:hover {
     background: #333333;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 191, 255, 0.5); /* Enhanced glow on hover (male mode) */
+}
+
+.female-mode .input-info .sign-in-btn {
+    box-shadow: 0 4px 8px rgba(255, 0, 255, 0.3); /* Glow for female mode (purple) */
+}
+
+.female-mode .input-info .sign-in-btn:hover {
+    box-shadow: 0 4px 12px rgba(255, 0, 255, 0.5); /* Enhanced glow on hover (female mode) */
 }
 
 .input-area {
