@@ -446,50 +446,48 @@ nav a:hover {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 0.2rem; /* Reduce padding slightly to fit content */
-        min-height: 60px; /* Set a minimum height to match previous header size */
+        padding: 0 0.2rem;
     }
 
     .logo {
-        height: 100%; /* Make logo full height of the header */
+        height: 50px; /* Set a fixed height for the logo to define header height */
         width: auto; /* Let width adjust proportionally */
-        max-height: 48px; /* Approximate height based on header padding (60px - 2 * 0.2rem * 16px/rem = 48px) */
         margin-left: 0.2rem;
-        margin-right: 0.3rem;
+        margin-right: 0.5rem;
         object-fit: contain; /* Ensure logo scales properly */
     }
 
     nav {
-        gap: 0.5rem; /* Reduce gap to fit content */
+        gap: 0.4rem; /* Reduce gap to prevent squishing */
     }
 
     nav a {
-        font-size: 0.8rem;
+        font-size: 0.7rem; /* Reduce font size to fit better */
     }
 
     .mode-toggle {
-        width: 36px;
-        height: 18px;
+        width: 32px; /* Reduce toggle size */
+        height: 16px;
     }
 
     .mode-toggle-label .toggle-slider {
-        width: 14px;
-        height: 14px;
+        width: 12px;
+        height: 12px;
         top: 2px;
         left: 2px;
     }
 
     .mode-toggle-input:checked + .mode-toggle-label .toggle-slider {
-        transform: translateX(18px);
+        transform: translateX(16px);
     }
 
     .auth-buttons {
-        gap: 0.3rem;
+        gap: 0.2rem; /* Reduce gap to prevent squishing */
         margin-right: 0.2rem;
     }
 
     .auth-btn {
-        padding: 0.3rem 0.6rem;
-        font-size: 0.7rem;
+        padding: 0.2rem 0.4rem; /* Reduce padding to fit better */
+        font-size: 0.6rem; /* Reduce font size to fit better */
     }
 }
