@@ -10,7 +10,7 @@ body {
 
 header {
     background: #121212;
-    padding: 0.5rem 1rem; /* Reduced padding to make header smaller */
+    padding: 0.3rem 0.5rem; /* Further reduced padding to make header smaller */
     position: sticky;
     top: 0;
     z-index: 10;
@@ -18,28 +18,28 @@ header {
 
 .header-content {
     display: flex;
-    justify-content: flex-start; /* Align content to the left */
+    justify-content: flex-start;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .logo {
-    width: 100px; /* Reduced logo size (was 150px) */
+    width: 80px; /* Further reduced logo size (was 100px) */
     height: auto;
-    margin-right: 1rem; /* Add space between logo and nav */
+    margin-right: 0.5rem; /* Reduced margin */
 }
 
 nav {
     display: flex;
     align-items: center;
-    gap: 1rem; /* Reduced gap between links */
+    gap: 0.8rem; /* Slightly reduced gap */
 }
 
 nav a {
     color: #E0E0E0;
     text-decoration: none;
-    font-size: 0.9rem; /* Slightly smaller font size */
+    font-size: 0.8rem; /* Further reduced font size */
     transition: color 0.3s ease;
 }
 
@@ -50,8 +50,8 @@ nav a:hover {
 .mode-toggle {
     position: relative;
     display: inline-block;
-    width: 50px; /* Slightly smaller toggle */
-    height: 25px;
+    width: 40px; /* Further reduced toggle size */
+    height: 20px;
 }
 
 .mode-toggle-input {
@@ -67,38 +67,38 @@ nav a:hover {
     width: 100%;
     height: 100%;
     background: #2ECC71;
-    border-radius: 12px; /* Adjusted for smaller size */
+    border-radius: 10px; /* Adjusted for smaller size */
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 4px;
+    padding: 0 3px;
     transition: background 0.3s ease;
 }
 
 .mode-toggle-label .male-icon,
 .mode-toggle-label .female-icon {
-    font-size: 0.8rem; /* Smaller icons */
+    font-size: 0.7rem; /* Further reduced icon size */
     color: #FFFFFF;
     opacity: 0.5;
 }
 
 .mode-toggle-label .male-icon {
-    margin-left: 4px;
+    margin-left: 3px;
 }
 
 .mode-toggle-label .female-icon {
-    margin-right: 4px;
+    margin-right: 3px;
 }
 
 .mode-toggle-label .toggle-slider {
     position: absolute;
     top: 2px;
     left: 2px;
-    width: 21px; /* Adjusted for smaller toggle */
-    height: 21px;
+    width: 16px; /* Adjusted for smaller toggle */
+    height: 16px;
     background: #FFFFFF;
-    border-radius: 10px;
+    border-radius: 8px;
     transition: transform 0.3s ease;
 }
 
@@ -107,7 +107,7 @@ nav a:hover {
 }
 
 .mode-toggle-input:checked + .mode-toggle-label .toggle-slider {
-    transform: translateX(25px); /* Adjusted for smaller toggle */
+    transform: translateX(20px); /* Adjusted for smaller toggle */
 }
 
 .mode-toggle-input:checked + .mode-toggle-label .male-icon {
@@ -128,15 +128,15 @@ nav a:hover {
 
 .auth-buttons {
     display: flex;
-    gap: 0.5rem;
-    margin-left: auto; /* Push auth buttons to the right */
+    gap: 0.4rem;
+    margin-left: auto;
 }
 
 .auth-btn {
-    padding: 0.4rem 0.8rem; /* Slightly smaller buttons */
-    border-radius: 1.2rem;
+    padding: 0.3rem 0.6rem; /* Further reduced button size */
+    border-radius: 1rem;
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     transition: all 0.3s ease;
 }
 
@@ -176,7 +176,7 @@ nav a:hover {
 
 .welcome-message {
     text-align: center;
-    margin: 3rem 0 1rem 0; /* Increased margin-top to move down slightly */
+    margin: 6rem 0 1rem 0; /* Increased margin-top to move down more */
     width: 100%;
     max-width: 70vw;
     transition: opacity 0.3s ease;
