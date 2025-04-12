@@ -28,7 +28,7 @@ header {
     width: 80px;
     height: auto;
     margin-right: 0.5rem;
-    margin-left: 1rem; /* Added margin to move logo inward */
+    margin-left: 1rem;
 }
 
 nav {
@@ -131,7 +131,7 @@ nav a:hover {
     display: flex;
     gap: 0.4rem;
     margin-left: auto;
-    margin-right: 1rem; /* Added margin to move buttons inward */
+    margin-right: 1rem;
 }
 
 .auth-btn {
@@ -178,9 +178,10 @@ nav a:hover {
 
 .page-title {
     text-align: center;
-    margin: 6rem 0 0 0; /* Matches welcome-message margin-top */
+    margin: 6rem 0 0 0;
     width: 100%;
     max-width: 70vw;
+    margin-bottom: 2rem; /* Increased margin-bottom to add more spacing */
 }
 
 .page-title h1 {
@@ -198,7 +199,7 @@ nav a:hover {
 
 .welcome-message {
     text-align: center;
-    margin: 1rem 0; /* Adjusted to flow naturally after page-title */
+    margin: 1rem 0;
     width: 100%;
     max-width: 70vw;
     transition: opacity 0.3s ease;
