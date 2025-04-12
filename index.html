@@ -15,20 +15,30 @@
                 <a href="#">About</a>
                 <a href="#">Contact</a>
                 <a href="#">Community</a>
-            </nav>
-            <div class="mode-toggle">
-                <div class="check">
-                    <input id="check" type="checkbox">
-                    <label for="check"></label>
+                <div class="mode-toggle">
+                    <input type="checkbox" id="mode-toggle" class="mode-toggle-input">
+                    <label for="mode-toggle" class="mode-toggle-label">
+                        <span class="male-icon">♂</span>
+                        <span class="female-icon">♀</span>
+                        <span class="toggle-slider"></span>
+                    </label>
                 </div>
+            </nav>
+            <div class="auth-buttons">
+                <a href="#" class="auth-btn login">Log In</a>
+                <a href="#" class="auth-btn signup">Sign Up</a>
             </div>
         </div>
     </header>
     <div class="container">
+        <div class="welcome-message">
+            <h1>Unlock the full power of Aye Twin</h1>
+            <p>or start chatting below</p>
+        </div>
         <div class="messages" id="messages"></div>
         <div class="input-info">
             <span>10 messages left</span>
-            <a href="#">Sign In →</a>
+            <a href="#" class="sign-in-btn">Sign In</a>
         </div>
         <div class="input-area">
             <input type="text" id="user-input" placeholder="Send a message...">
