@@ -79,17 +79,7 @@ nav a:hover {
 
 .mode-toggle-label .male-icon,
 .mode-toggle-label .female-icon {
-    font-size: 0.7rem;
-    color: #FFFFFF;
-    opacity: 0.5;
-}
-
-.mode-toggle-label .male-icon {
-    margin-left: 3px;
-}
-
-.mode-toggle-label .female-icon {
-    margin-right: 3px;
+    display: none; /* Remove the male and female symbols */
 }
 
 .mode-toggle-label .toggle-slider {
@@ -111,22 +101,6 @@ nav a:hover {
     transform: translateX(20px);
 }
 
-.mode-toggle-input:checked + .mode-toggle-label .male-icon {
-    opacity: 0.5;
-}
-
-.mode-toggle-input:checked + .mode-toggle-label .female-icon {
-    opacity: 1;
-}
-
-.mode-toggle-input:not(:checked) + .mode-toggle-label .male-icon {
-    opacity: 1;
-}
-
-.mode-toggle-input:not(:checked) + .mode-toggle-label .female-icon {
-    opacity: 0.5;
-}
-
 .auth-buttons {
     display: flex;
     gap: 0.4rem;
@@ -145,9 +119,7 @@ nav a:hover {
 .auth-btn.login {
     background: transparent;
     color: #E0E0E0;
-    border: 1px solid #
-
-E0E0E0;
+    border: 1px solid #E0E0E0;
 }
 
 .auth-btn.login:hover {
@@ -367,8 +339,8 @@ E0E0E0;
     display: flex;
     align-items: center;
     padding: 0.7rem 1.1rem;
-    background: #2A2A2A; /* Matches the user chat bubble background */
-    border-radius: 2rem; /* Matches the chat bubble border-radius */
+    background: #2A2A2A;
+    border-radius: 2rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     padding-bottom: 0.5rem;
     position: relative;
@@ -376,10 +348,10 @@ E0E0E0;
 
 .input-area input {
     flex-grow: 1;
-    padding: 0; /* Remove padding since the parent .input-area has padding */
-    background: transparent; /* Remove the default background */
+    padding: 0;
+    background: transparent;
     color: #E0E0E0;
-    border: none; /* Remove the default border */
+    border: none;
     outline: none;
     font-size: 1rem;
 }
@@ -395,9 +367,10 @@ E0E0E0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem; /* Increased font size for a bolder arrow */
+    font-weight: 700; /* Added font weight for a bolder appearance */
     transition: all 0.3s ease;
-    margin-left: 0.6rem; /* Space between input and button */
+    margin-left: 0.6rem;
 }
 
 .input-area button:hover {
@@ -417,7 +390,7 @@ E0E0E0;
 }
 
 .female-mode .input-area {
-    background: #2A2A2A; /* Keep the input area background consistent with user messages */
+    background: #2A2A2A;
 }
 
 .female-mode .input-area button {
@@ -440,7 +413,7 @@ E0E0E0;
 }
 
 .male-mode .input-area {
-    background: #2A2A2A; /* Keep the input area background consistent with user messages */
+    background: #2A2A2A;
 }
 
 .male-mode .input-area button {
