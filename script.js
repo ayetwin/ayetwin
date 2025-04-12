@@ -24,21 +24,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Enter') sendMessage();
     });
 
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.scrollY;
-        body.classList.add('scrolling');
-        body.style.setProperty('--scroll', scrollPosition);
-    });
-
     function sendMessage() {
         const message = userInput.value.trim();
         if (!message) return;
 
         const userMsg = document.createElement('p');
+        userMsg.classList.add('user');
         userMsg.textContent = `You: ${message}`;
         messages.appendChild(userMsg);
 
         const botMsg = document.createElement('p');
+        botMsg.classList.add('bot');
         botMsg.textContent = `Aye Twin: ${getBotResponse(message)}`;
         messages.appendChild(botMsg);
 
