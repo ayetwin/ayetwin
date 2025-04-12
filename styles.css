@@ -191,12 +191,12 @@ nav a:hover {
     margin-bottom: 0.5rem;
     position: relative;
     display: inline-block;
-    transition: transform 0.3s ease, color 0.3s ease; /* Add transition for hover effect */
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .welcome-message h1:hover {
-    transform: scale(1.05); /* Slightly scale up the text */
-    color: #FFFFFF; /* Brighten the text color on hover */
+    transform: scale(1.05);
+    color: #FFFFFF;
 }
 
 .welcome-message h1::after {
@@ -208,12 +208,12 @@ nav a:hover {
     margin-left: 0.5rem;
     top: 50%;
     transform: translateY(-50%);
-    transition: transform 0.3s ease, color 0.3s ease; /* Add transition for hover effect */
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .welcome-message h1:hover::after {
-    transform: translateY(-50%) translateX(0.3rem); /* Move the arrow to the right */
-    color: #FFFFFF; /* Brighten the arrow color on hover */
+    transform: translateY(-50%) translateX(0.3rem);
+    color: #FFFFFF;
 }
 
 .welcome-message p {
@@ -434,4 +434,57 @@ nav a:hover {
 
 .male-mode .input-area button:hover {
     box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    header {
+        padding: 0.2rem 0.3rem; /* Reduce padding on mobile */
+    }
+
+    .header-content {
+        flex-wrap: wrap; /* Allow wrapping if needed */
+        justify-content: space-between; /* Distribute space evenly */
+        padding: 0 0.5rem; /* Add some padding to prevent edge squishing */
+    }
+
+    .logo {
+        width: 60px; /* Reduce logo size on mobile */
+        margin-left: 0.5rem;
+        margin-right: 0.3rem;
+    }
+
+    nav {
+        gap: 0.5rem; /* Reduce gap between nav items */
+    }
+
+    nav a {
+        font-size: 0.7rem; /* Slightly smaller font size for nav links */
+    }
+
+    .mode-toggle {
+        width: 32px; /* Reduce toggle size */
+        height: 16px;
+    }
+
+    .mode-toggle-label .toggle-slider {
+        width: 12px; /* Adjust slider size */
+        height: 12px;
+        top: 2px;
+        left: 2px;
+    }
+
+    .mode-toggle-input:checked + .mode-toggle-label .toggle-slider {
+        transform: translateX(16px); /* Adjust for smaller toggle width */
+    }
+
+    .auth-buttons {
+        gap: 0.3rem; /* Reduce gap between buttons */
+        margin-right: 0.5rem;
+    }
+
+    .auth-btn {
+        padding: 0.2rem 0.5rem; /* Reduce padding for buttons */
+        font-size: 0.6rem; /* Smaller font size for buttons */
+    }
 }
